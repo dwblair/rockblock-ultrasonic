@@ -53,8 +53,8 @@ while True:
     # create some data
     batt_voltage= get_voltage(vbat_voltage)*2 #voltage divider on A9
     depth_inches = get_depth_inches(analog_in)
-    sht = adafruit_sht31d.SHT31D(i2c)
-    bmp = adafruit_bmp280.Adafruit_BMP280_I2C(i2c)
+    #sht = adafruit_sht31d.SHT31D(i2c)
+    #bmp = adafruit_bmp280.Adafruit_BMP280_I2C(i2c)
     print("voltage:",batt_voltage)
     print("depth:",depth_inches)
     
@@ -66,8 +66,8 @@ while True:
     # create binary data
     data = struct.pack("f",batt_voltage)
     data += struct.pack("f",depth_inches)
-    data += struct.pack("2f", sht.relative_humidity, sht.temperature)
-    data += struct.pack("2f", bmp.pressure, bmp.temperature)
+    #data += struct.pack("2f", sht.relative_humidity, sht.temperature)
+    #data += struct.pack("2f", bmp.pressure, bmp.temperature)
     #data += struct.pack("i", some_int)
     #data += struct.pack("f", some_float)
     #data += struct.pack("i", len(some_text))
